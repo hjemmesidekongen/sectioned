@@ -1,0 +1,242 @@
+// |--------------------------------------------------------------------------
+// | Sectioned
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .sectioned
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// Colouring
+$sectioned-default-background: $body-bg-secondary;
+$sectioned-primary-background: $brand-primary;
+$sectioned-secondary-background: $brand-secondary;
+$sectioned-tertiary-background: $brand-tertiary;
+$sectioned-quaternary-background: $brand-quaternary;
+
+// Responsive
+$xs-sectioned-inner-spacing-lg: 60px;
+$xs-sectioned-inner-spacing: 40px;
+$xs-sectioned-inner-spacing-sm: 30px;
+
+$sm-sectioned-inner-spacing-lg: 80px;
+$sm-sectioned-inner-spacing: 60px;
+$sm-sectioned-inner-spacing-sm: 50px;
+
+$md-sectioned-inner-spacing-lg: 120px;
+$md-sectioned-inner-spacing: 80px;
+$md-sectioned-inner-spacing-sm: 60px;
+
+$lg-sectioned-inner-spacing-lg: 130px;
+$lg-sectioned-inner-spacing: 90px;
+$lg-sectioned-inner-spacing-sm: 70px;
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin sectioned-mixin($background-color) {
+	background-color: $background-color;
+}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.sectioned--inner {
+	padding-top: $xs-sectioned-inner-spacing;
+	padding-bottom: $xs-sectioned-inner-spacing;
+
+	// Large
+	.sectioned--large-inner-spacing & {
+		padding-top: $xs-sectioned-inner-spacing-lg;
+		padding-bottom: $xs-sectioned-inner-spacing-lg;
+	}
+
+	// Small
+	.sectioned--small-inner-spacing & {
+		padding-top: $xs-sectioned-inner-spacing-sm;
+		padding-bottom: $xs-sectioned-inner-spacing-sm;
+	}
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// Default
+.sectioned {
+ 	@include sectioned-mixin($sectioned-default-background);
+}
+
+// White
+.sectioned--white {
+ 	@include sectioned-mixin(#fff);
+}
+
+// Primary
+.sectioned--primary {
+ 	@include sectioned-mixin($sectioned-primary-background);
+}
+
+// Secondary
+.sectioned--secondary {
+ 	@include sectioned-mixin($sectioned-secondary-background);
+}
+
+// Tertiary
+.sectioned--tertiary {
+ 	@include sectioned-mixin($sectioned-tertiary-background);
+}
+
+// Quaternary
+.sectioned--quaternary {
+ 	@include sectioned-mixin($sectioned-quaternary-background);
+}
+
+.sectioned--background-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.sectioned--background-image--parallax {
+    background-attachment: fixed;
+    overflow: hidden;
+  }
+}
+
+.sectioned--overlay-dark {
+
+  > .sectioned--inner {
+    background-color: fade(#000, 70%);
+  }
+}
+
+.sectioned--overlay-light {
+
+  > .sectioned--inner {
+    background-color: fade(#fff, 70%);
+  }
+}
+
+.sectioned--overlay-primary {
+
+  > .sectioned--inner {
+    background-color: fade($brand-primary, 70%);
+  }
+}
+
+.sectioned--overlay-secondary {
+
+  > .sectioned--inner {
+    background-color: fade($brand-secondary, 70%);
+  }
+}
+
+.sectioned--overlay-tertiary {
+
+  > .sectioned--inner {
+    background-color: fade($brand-tertiary, 70%);
+  }
+}
+
+.sectioned--overlay-quaternary {
+
+  > .sectioned--inner {
+    background-color: fade($brand-quaternary, 70%);
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+	// Section
+	.sectioned--inner {
+		padding-top: $sm-sectioned-inner-spacing;
+		padding-bottom: $sm-sectioned-inner-spacing;
+
+		// Large
+		.sectioned--large-inner-spacing & {
+			padding-top: $sm-sectioned-inner-spacing-lg;
+			padding-bottom: $sm-sectioned-inner-spacing-lg;
+		}
+
+		// Small
+		.sectioned--small-inner-spacing & {
+			padding-top: $sm-sectioned-inner-spacing-sm;
+			padding-bottom: $sm-sectioned-inner-spacing-sm;
+		}
+	}
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Section
+  .sectioned--inner {
+    padding-top: $md-sectioned-inner-spacing;
+    padding-bottom: $md-sectioned-inner-spacing;
+
+    // Large
+    .sectioned--large-inner-spacing & {
+      padding-top: $md-sectioned-inner-spacing-lg;
+      padding-bottom: $md-sectioned-inner-spacing-lg;
+    }
+
+    // Small
+    .sectioned--small-inner-spacing & {
+      padding-top: $md-sectioned-inner-spacing-sm;
+      padding-bottom: $md-sectioned-inner-spacing-sm;
+    }
+  }
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Section
+  .sectioned--inner {
+    padding-top: $lg-sectioned-inner-spacing;
+    padding-bottom: $lg-sectioned-inner-spacing;
+
+    // Large
+    .sectioned--large-inner-spacing & {
+      padding-top: $lg-sectioned-inner-spacing-lg;
+      padding-bottom: $lg-sectioned-inner-spacing-lg;
+    }
+
+    // Small
+    .sectioned--small-inner-spacing & {
+      padding-top: $lg-sectioned-inner-spacing-sm;
+      padding-bottom: $lg-sectioned-inner-spacing-sm;
+    }
+  }
+}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
