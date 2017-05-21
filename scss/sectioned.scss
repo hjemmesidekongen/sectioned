@@ -22,7 +22,7 @@
 // Styling
 // --------------------------------------------------
 
-.sectioned--inner {
+.sectioned__inner {
 	padding-top: $xs-sectioned-inner-spacing;
 	padding-bottom: $xs-sectioned-inner-spacing;
 
@@ -86,42 +86,42 @@
 
 .sectioned--overlay-dark {
 
-  > .sectioned--inner {
+  > .sectioned__inner {
     background-color: fade(#000, 70%);
   }
 }
 
 .sectioned--overlay-light {
 
-  > .sectioned--inner {
+  > .sectioned__inner {
     background-color: fade(#fff, 70%);
   }
 }
 
 .sectioned--overlay-primary {
 
-  > .sectioned--inner {
+  > .sectioned__inner {
     background-color: fade($brand-primary, 70%);
   }
 }
 
 .sectioned--overlay-secondary {
 
-  > .sectioned--inner {
+  > .sectioned__inner {
     background-color: fade($brand-secondary, 70%);
   }
 }
 
 .sectioned--overlay-tertiary {
 
-  > .sectioned--inner {
+  > .sectioned__inner {
     background-color: fade($brand-tertiary, 70%);
   }
 }
 
 .sectioned--overlay-quaternary {
 
-  > .sectioned--inner {
+  > .sectioned__inner {
     background-color: fade($brand-quaternary, 70%);
   }
 }
@@ -143,7 +143,7 @@
 @media #{$breakpoint-tablet-only} {
 
 	// Section
-	.sectioned--inner {
+	.sectioned__inner {
 		padding-top: $sm-sectioned-inner-spacing;
 		padding-bottom: $sm-sectioned-inner-spacing;
 
@@ -168,7 +168,7 @@
 @media #{$breakpoint-desktop-only} {
 
   // Section
-  .sectioned--inner {
+  .sectioned__inner {
     padding-top: $md-sectioned-inner-spacing;
     padding-bottom: $md-sectioned-inner-spacing;
 
@@ -190,7 +190,7 @@
 @media #{$breakpoint-large-desktop-and-up} {
 
   // Section
-  .sectioned--inner {
+  .sectioned__inner {
     padding-top: $lg-sectioned-inner-spacing;
     padding-bottom: $lg-sectioned-inner-spacing;
 
