@@ -1,3 +1,33 @@
 @mixin sectioned-mixin($background-color) {
 	background-color: $background-color;
 }
+
+@mixin sectioned-responsive-sizing-mixin($xs-top-bottom-spacing, $sm-top-bottom-spacing, $md-top-bottom-spacing, $lg-top-bottom-spacing) {
+
+    .sectioned__inner {
+
+        // Mobile - only
+        @media #{$breakpoint-mobile-only} {
+            padding-top: $xs-top-bottom-spacing;
+            padding-bottom: $xs-top-bottom-spacing;
+        }
+
+        // Tablet - only
+        @media #{$breakpoint-tablet-only} {
+            padding-top: $sm-top-bottom-spacing;
+            padding-bottom: $sm-top-bottom-spacing;
+        }
+
+        // Desktop - only
+        @media #{$breakpoint-desktop-only} {
+            padding-top: $md-top-bottom-spacing;
+            padding-bottom: $md-top-bottom-spacing;
+        }
+
+        // Large desktop - and up
+        @media #{$breakpoint-large-desktop-and-up} {
+            padding-top: $lg-top-bottom-spacing;
+            padding-bottom: $lg-top-bottom-spacing;
+        }
+    }
+}

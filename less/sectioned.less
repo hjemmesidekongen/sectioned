@@ -22,23 +22,6 @@
 // Styling
 // --------------------------------------------------
 
-.sectioned__inner {
-	padding-top: @xs-sectioned-inner-spacing;
-	padding-bottom: @xs-sectioned-inner-spacing;
-
-	// Large
-	.sectioned--large-inner-spacing & {
-		padding-top: @xs-sectioned-inner-spacing-lg;
-		padding-bottom: @xs-sectioned-inner-spacing-lg;
-	}
-
-	// Small
-	.sectioned--small-inner-spacing & {
-		padding-top: @xs-sectioned-inner-spacing-sm;
-		padding-bottom: @xs-sectioned-inner-spacing-sm;
-	}
-}
-
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
@@ -85,45 +68,46 @@
 }
 
 .sectioned--overlay-dark {
-
-  > .sectioned__inner {
-    background-color: fade(#000, 70%);
-  }
+  .sectioned-mixin(fade(#000, 70%));
 }
 
 .sectioned--overlay-light {
-
-  > .sectioned__inner {
-    background-color: fade(#fff, 70%);
-  }
+  .sectioned-mixin(fade(#fff, 70%));
 }
 
 .sectioned--overlay-primary {
-
-  > .sectioned__inner {
-    background-color: fade(@brand-primary, 70%);
-  }
+  .sectioned-mixin(fade(@brand-primary, 70%));
 }
 
 .sectioned--overlay-secondary {
-
-  > .sectioned__inner {
-    background-color: fade(@brand-secondary, 70%);
-  }
+  .sectioned-mixin(fade(@brand-secondary, 70%));
 }
 
 .sectioned--overlay-tertiary {
-
-  > .sectioned__inner {
-    background-color: fade(@brand-tertiary, 70%);
-  }
+  .sectioned-mixin(fade(@brand-tertiary, 70%));
 }
 
 .sectioned--overlay-quaternary {
+  .sectioned-mixin(fade(@brand-quaternary, 70%));
+}
 
-  > .sectioned__inner {
-    background-color: fade(@brand-quaternary, 70%);
-  }
+// --------------------------------------------------
+// Sizes
+// --------------------------------------------------
+
+// Small inner spacing
+.sectioned--small-inner-spacing {
+  .sectioned-responsive-sizing-mixin(@xs-sectioned-inner-spacing-sm, @sm-sectioned-inner-spacing-sm, @md-sectioned-inner-spacing-sm, @lg-sectioned-inner-spacing-sm);
+}
+
+// Default inner spacing
+.sectioned {
+  .sectioned-responsive-sizing-mixin(@xs-sectioned-inner-spacing, @sm-sectioned-inner-spacing, @md-sectioned-inner-spacing, @lg-sectioned-inner-spacing);
+}
+
+// Large inner spacing
+.sectioned--large-inner-spacing {
+  .sectioned-responsive-sizing-mixin(@xs-sectioned-inner-spacing-lg, @sm-sectioned-inner-spacing-lg, @md-sectioned-inner-spacing-lg, @lg-sectioned-inner-spacing-lg);
 }
 
 // --------------------------------------------------
@@ -140,73 +124,16 @@
 @media @breakpoint-tablet-and-up {}
 
 // Tablet - only
-@media @breakpoint-tablet-only {
-
-  // Section
-  .sectioned__inner {
-    padding-top: @sm-sectioned-inner-spacing;
-    padding-bottom: @sm-sectioned-inner-spacing;
-
-    // Large
-    .sectioned--large-inner-spacing & {
-      padding-top: @sm-sectioned-inner-spacing-lg;
-      padding-bottom: @sm-sectioned-inner-spacing-lg;
-    }
-
-    // Small
-    .sectioned--small-inner-spacing & {
-      padding-top: @sm-sectioned-inner-spacing-sm;
-      padding-bottom: @sm-sectioned-inner-spacing-sm;
-    }
-  }
-}
+@media @breakpoint-tablet-only {}
 
 // Desktop - and up
 @media @breakpoint-desktop-and-up {}
 
 // Desktop - only
-@media @breakpoint-desktop-only {
-
-  // Section
-  .sectioned__inner {
-    padding-top: @md-sectioned-inner-spacing;
-    padding-bottom: @md-sectioned-inner-spacing;
-
-    // Large
-    .sectioned--large-inner-spacing & {
-      padding-top: @md-sectioned-inner-spacing-lg;
-      padding-bottom: @md-sectioned-inner-spacing-lg;
-    }
-
-    // Small
-    .sectioned--small-inner-spacing & {
-      padding-top: @md-sectioned-inner-spacing-sm;
-      padding-bottom: @md-sectioned-inner-spacing-sm;
-    }
-  }
-}
+@media @breakpoint-desktop-only {}
 
 // Large desktop - and up
-@media @breakpoint-large-desktop-and-up {
-
-  // Section
-  .sectioned__inner {
-    padding-top: @lg-sectioned-inner-spacing;
-    padding-bottom: @lg-sectioned-inner-spacing;
-
-    // Large
-    .sectioned--large-inner-spacing & {
-      padding-top: @lg-sectioned-inner-spacing-lg;
-      padding-bottom: @lg-sectioned-inner-spacing-lg;
-    }
-
-    // Small
-    .sectioned--small-inner-spacing & {
-      padding-top: @lg-sectioned-inner-spacing-sm;
-      padding-bottom: @lg-sectioned-inner-spacing-sm;
-    }
-  }
-}
+@media @breakpoint-large-desktop-and-up {}
 
 // Print
 @media print {}
