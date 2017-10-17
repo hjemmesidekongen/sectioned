@@ -95,19 +95,18 @@
 // Sizes
 // --------------------------------------------------
 
-// Small inner spacing
-.sectioned--small-inner-spacing {
-  .sectioned-responsive-sizing-mixin(@xs-sectioned-inner-spacing-sm, @sm-sectioned-inner-spacing-sm, @md-sectioned-inner-spacing-sm, @lg-sectioned-inner-spacing-sm);
-}
-
-// Default inner spacing
 .sectioned {
   .sectioned-responsive-sizing-mixin(@xs-sectioned-inner-spacing, @sm-sectioned-inner-spacing, @md-sectioned-inner-spacing, @lg-sectioned-inner-spacing);
-}
 
-// Large inner spacing
-.sectioned--large-inner-spacing {
-  .sectioned-responsive-sizing-mixin(@xs-sectioned-inner-spacing-lg, @sm-sectioned-inner-spacing-lg, @md-sectioned-inner-spacing-lg, @lg-sectioned-inner-spacing-lg);
+  // Small inner spacing
+  &.sectioned--small-inner-spacing {
+    .sectioned-responsive-sizing-mixin(@xs-sectioned-inner-spacing-sm, @sm-sectioned-inner-spacing-sm, @md-sectioned-inner-spacing-sm, @lg-sectioned-inner-spacing-sm);
+  }
+
+  // Large inner spacing
+  &.sectioned--large-inner-spacing {
+    .sectioned-responsive-sizing-mixin(@xs-sectioned-inner-spacing-lg, @sm-sectioned-inner-spacing-lg, @md-sectioned-inner-spacing-lg, @lg-sectioned-inner-spacing-lg);
+  }
 }
 
 // --------------------------------------------------
